@@ -1,6 +1,6 @@
 {
     "name": "Camera quick actions",
-    "description": "Adds quick actions to Take a photo and Record a video",
+    "description": "Adds quick actions to Take photos and Record videos",
     "category": "camera",
     "infos": {
         "maintainer": "AliNa"
