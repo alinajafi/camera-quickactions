@@ -1,10 +1,22 @@
 diff -Nru jolla/usr/share/jolla-camera/pages/CameraPage.qml alina/usr/share/jolla-camera/pages/CameraPage.qml
 --- jolla/usr/share/jolla-camera/pages/CameraPage.qml	2016-01-16 15:55:00.430818000 +0330
-+++ alina/usr/share/jolla-camera/pages/CameraPage.qml	2016-01-16 23:09:00.247903470 +0330
-@@ -191,5 +191,21 @@
-             switcherView.positionViewAtEnd()
-             window.activate()
-         }
++++ alina/usr/share/jolla-camera/pages/CameraPage.qml	2016-01-17 00:17:27.912025326 +0330
+@@ -188,6 +188,31 @@
+         signal showFrontViewfinder()
+         onShowFrontViewfinder: {
+             Settings.global.cameraDevice = "secondary"
++            Settings.global.captureMode = "image"
++            switcherView.positionViewAtEnd()
++            window.activate()
++        }
++
++        signal showFrontVideoViewfinder()
++        onShowFrontVideoViewfinder: {
++            Settings.global.cameraDevice = "secondary"
++            Settings.global.captureMode = "video"
++            switcherView.positionViewAtEnd()
++            window.activate()
++        }
 +
 +        signal showRearViewfinder()
 +        onShowRearViewfinder: {
@@ -18,8 +30,6 @@ diff -Nru jolla/usr/share/jolla-camera/pages/CameraPage.qml alina/usr/share/joll
 +        onShowVideoViewfinder: {
 +            Settings.global.cameraDevice = "primary"
 +            Settings.global.captureMode = "video"
-+            switcherView.positionViewAtEnd()
-+            window.activate()
-+        }
-     }
- }
+             switcherView.positionViewAtEnd()
+             window.activate()
+         }
